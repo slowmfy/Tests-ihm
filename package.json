@@ -1,0 +1,25 @@
+{
+  "name": "tests-ihm",
+  "version": "1.0.0",
+  "description": "Test ihm M1 Miage",
+  "scripts": {
+    "test": "playwright test",
+    "test:headed": "playwright test --headed",
+    "report": "playwright show-report"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/slowmfy/Tests-ihm.git"
+  },
+  "keywords": [],
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/slowmfy/Tests-ihm/issues"
+  },
+  "homepage": "https://github.com/slowmfy/Tests-ihm#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.49.1",
+    "@types/node": "^26.6.6",
+    "typescript": "^7.0.2"
+  }
+}
