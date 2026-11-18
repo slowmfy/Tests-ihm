@@ -1,16 +1,11 @@
-# Noms des Binomes 
-
-CHEIKH Mohamed Amine - Benkhennouch Dihya
-
-
 # Tests-ihm — Tests d'IHM de SauceDemo avec un DSL et Playwright
 
 M1 MIAGE — Système testé : <https://www.saucedemo.com>
 
 ## Binôme
 
-- NOM Prénom — *(à compléter)*
-- NOM Prénom — *(à compléter)*
+- NOM Prénom — *CHEIKH Mohamed Amine*
+- NOM Prénom — *BENKHENNOUCHE Dihya*
 
 ## Lancer les tests
 
