@@ -4,16 +4,15 @@ M1 MIAGE — Système testé : <https://www.saucedemo.com>
 
 ## Binôme
 
-- NOM Prénom — *CHEIKH Mohamed Amine*
-- NOM Prénom — *BENKHENNOUCHE Dihya*
+- CHEIKH Mohamed Amine
+- BENKHENNOUCHE Dihya
 
 ## Lancer les tests
 
 ```bash
 npm install
 npx playwright install chromium
-npm test                 # toute la suite (headless)
-npm run test:headed      # en voyant le navigateur
+npm test                 # toute la suite, navigateur visible (un test à la fois, 500 ms entre chaque action)
 npm run report           # rapport HTML
 ```
 
@@ -126,7 +125,7 @@ Les perceptions sont des **assertions** : elles attendent automatiquement (auto-
 | C1 | Chaque produit est affiché au bon prix | [catalogue.spec.ts](tests/catalogue.spec.ts) `C1` | Oracle métier |
 | C2.1–4 | Tri par nom A-Z, Z-A, prix croissant, prix décroissant | `C2.x` (boucle sur `tris`) | Couverture de toutes les valeurs du tri |
 | C3 | La fiche produit présente le bon produit, retour au catalogue | `C3` | Parcours nominal |
-| C4 | Le tri est conservé après consultation d'une fiche | `C4` | Transition d'état (persistance du tri) |
+| C4 | *[défaut connu]* le tri choisi est perdu après consultation d'une fiche (retour à « nom A-Z ») | `C4` (`test.fail`) | Transition d'état (persistance du tri) : défaut détecté |
 | C5 | *[défaut connu]* `problem_user` ne peut pas trier | `C5` (`test.fail`) | Robustesse / détection de défaut |
 | P1 | Ajouter un produit depuis le catalogue | [panier.spec.ts](tests/panier.spec.ts) `P1` | Nominal + borne 1 |
 | P2 | Ajouter tous les produits | `P2` | Borne haute (6) |
@@ -147,3 +146,12 @@ Les perceptions sont des **assertions** : elles attendent automatiquement (auto-
 ---
 
 ## 4. Outillage et usage des LLM / agents
+
+### Outillage
+
+- **Playwright Test** (TypeScript, Chromium) : exécution des tests, attente automatique, fixtures et rapport HTML. En cas d'échec, la trace et une capture d'écran sont conservées.
+- **Maîtrise de Playwright** : Mohamed Amine CHEIKH utilise aussi Playwright **en Python** dans le cadre de son alternance. C'est ce qui lui a permis de bien maîtriser l'outil.
+
+### Usage des LLM / agents
+
+Le site a été confié à une IA pour qu'elle y réalise quelques tests et repère ce qui aurait pu être oublié : une fonctionnalité, un écran ou un cas à tester. L'objectif était d'avoir un regard extérieur sur la couverture des tests.

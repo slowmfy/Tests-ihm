@@ -26,7 +26,8 @@ test.describe('Tâche : parcourir le catalogue', () => {
     await moi.estSurEcran('catalogue');
   });
 
-  test('C4 - le tri choisi est conservé après consultation d’une fiche', async ({ moi }) => {
+  test('C4 - [défaut connu] le tri choisi est perdu après consultation d’une fiche', async ({ moi }) => {
+    test.fail(true, 'Au retour sur le catalogue, le tri revient à « nom A-Z »');
     await moi.trierCatalogue('prix décroissant');
     await moi.consulterProduit('Sauce Labs Onesie');
     await moi.revenirAuCatalogue();

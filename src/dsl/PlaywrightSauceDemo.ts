@@ -184,7 +184,9 @@ export class PlaywrightSauceDemo implements SauceDemo {
 
   async produitEstMarqueAjoute(produit: Produit, ajoute = true) {
     const libelle = ajoute ? 'Remove' : 'Add to cart';
-    await expect(this.conteneur(produit).getByRole('button')).toHaveText(libelle);
+    // Filtre sur le nom : les liens « View details for … » de la carte ont aussi le rôle button.
+    const bouton = this.conteneur(produit).getByRole('button', { name: /^(Add to cart|Remove)$/ });
+    await expect(bouton).toHaveText(libelle);
   }
 
   async catalogueAfficheProduits(n: number) {
